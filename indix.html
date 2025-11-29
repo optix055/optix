@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTIX | حلول التيار الخفيف وأنظمة الأمن</title>
+    <!-- تضمين Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تضمين أيقونات Lucide React عبر مكتبة CDN (بديل) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* تخصيص الخط العربي ليكون عصريًا وواضحًا */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease-in-out;
+            background-color: #f8f9fa; /* خلفية فاتحة بشكل عام */
+        }
+        /* لتطبيق الأيقونات من مكتبة Lucide */
+        .icon {
+            stroke-width: 2.5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- شريط التنقل (Header) -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- الشعار/اسم الشركة -->
+                <a href="#" class="text-3xl font-extrabold text-blue-600 flex items-center">
+                    <i data-lucide="shield-check" class="icon w-8 h-8 ml-2 text-green-500"></i>
+                    التيار الذكي
+                </a>
+                
+                <!-- روابط التنقل الرئيسية (لأجهزة سطح المكتب) -->
+                <nav class="hidden md:flex space-x-6 space-x-reverse text-lg">
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">خدماتنا</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">سابقة أعمالنا</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">عن الشركة</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">تواصل معنا</a>
+                </nav>
+
+                <!-- زر طلب عرض سعر (CTA رئيسي) -->
+                <a href="#quote" class="hidden md:block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 text-lg">
+                    اطلب عرض سعر
+                </a>
+
+                <!-- زر قائمة الهامبرغر للجوال -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:text-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                    <i data-lucide="menu" class="icon w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- قائمة الجوال (مخفية افتراضياً) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-200">خدماتنا</a>
+                <a href="#projects" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-200">سابقة أعمالنا</a>
+                <a href="#about" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-200">عن الشركة</a>
+                <a href="#contact" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-200">تواصل معنا</a>
+                <a href="#quote" class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md text-base mt-2">اطلب عرض سعر</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+
+        <!-- قسم البطل (Hero Section) - جذب الانتباه والتركيز على الأمن -->
+        <section id="hero" class="bg-gray-900 text-white pt-16 pb-20 sm:pt-24 sm:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    حلول <span class="text-green-400">التيار الخفيف الذكية</span> لأمن منشأتك
+                </h1>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                    نحن نضمن حماية وأتمتة منشآتك بأحدث تقنيات الأنظمة الأمنية والاتصالات والشبكات، مع التزام تام بالجودة والموثوقية.
+                </p>
+                <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-10 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 text-xl">
+                    ابدأ مشروعك بأمان اليوم
+                </a>
+            </div>
+        </section>
+
+        <!-- شريط الثقة (Trust Bar) - لماذا تختارنا -->
+        <section class="bg-white py-12 shadow-xl -mt-16 relative z-10 rounded-b-3xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-300">
+                        <i data-lucide="zap" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">تقنية متقدمة</h3>
+                        <p class="text-gray-600">نستخدم أحدث المعايير العالمية في أنظمة التيار الخفيف.</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-300">
+                        <i data-lucide="lock" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">أمان وموثوقية</h3>
+                        <p class="text-gray-600">حلولنا مصممة لضمان أعلى مستويات الأداء والأمان المستمر.</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-300">
+                        <i data-lucide="users" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">دعم فني 24/7</h3>
+                        <p class="text-gray-600">فريقنا جاهز للدعم والصيانة في أي وقت تحتاجه.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم خدماتنا (Services) - تفصيل العرض -->
+        <section id="services" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">خدماتنا الرئيسية</h2>
+                <p class="text-xl text-center text-gray-600 max-w-2xl mx-auto mb-16">نقدم مجموعة شاملة من حلول التيار الخفيف، المصممة خصيصًا لتلبية احتياجات الأمان والاتصالات في المشاريع الكبيرة والصغيرة.</p>
+
+                <!-- شبكة الخدمات -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- الخدمة 1: أنظمة المراقبة (CCTV) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="video" class="icon w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">كاميرات المراقبة (CCTV)</h3>
+                        <p class="text-gray-600 mb-4">تركيب وصيانة أنظمة مراقبة عالية الدقة (IP & Analog)، بما في ذلك التحليل الذكي للفيديو (VCA).</p>
+                        <a href="#quote" class="text-blue-600 font-semibold hover:underline flex items-center">
+                            اعرف المزيد <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- الخدمة 2: أنظمة التحكم بالدخول (Access Control) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="fingerprint" class="icon w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">التحكم بالدخول (AC)</h3>
+                        <p class="text-gray-600 mb-4">حلول البطاقات، بصمات الأصابع، والتعرف على الوجه لإدارة دخول الموظفين والزوار بدقة.</p>
+                        <a href="#quote" class="text-blue-600 font-semibold hover:underline flex items-center">
+                            اعرف المزيد <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- الخدمة 3: شبكات البيانات والاتصالات -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="hard-drive" class="icon w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">شبكات البيانات والـ IT</h3>
+                        <p class="text-gray-600 mb-4">بنية تحتية متكاملة للشبكات، الألياف البصرية، وغرف الخوادم (Data Centers) لسرعة موثوقة.</p>
+                        <a href="#quote" class="text-blue-600 font-semibold hover:underline flex items-center">
+                            اعرف المزيد <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- الخدمة 4: أنظمة إنذار الحريق (Fire Alarm) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="flame" class="icon w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">إنذار ومكافحة الحريق</h3>
+                        <p class="text-gray-600 mb-4">أنظمة إنذار تفاعلية ومعتمدة تضمن الاستجابة السريعة لحماية الأرواح والممتلكات.</p>
+                        <a href="#quote" class="text-blue-600 font-semibold hover:underline flex items-center">
+                            اعرف المزيد <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- CTA إضافي لتعزيز الجذب -->
+                <div class="mt-16 text-center">
+                    <p class="text-2xl font-semibold text-gray-700 mb-4">هل تحتاج إلى حلول مخصصة؟</p>
+                    <a href="#contact" class="inline-block bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg">
+                        تحدث مع خبير فني
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم سابقة الأعمال (Projects) - قم بالتعديل هنا -->
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">مشاريعنا الناجحة</h2>
+                <p class="text-xl text-center text-gray-600 max-w-2xl mx-auto mb-16">ثقة عملائنا هي شهادتنا. إليك نظرة على بعض المشاريع التي قمنا بتنفيذها بأعلى معايير الجودة.</p>
+                
+                <!-- شبكة المشاريع - يمكنك إضافة المزيد هنا -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- المشروع 1: مركز تجاري (مثال) -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-blue-500/30 transition duration-500">
+                        <!-- يمكنك استبدال رابط الصورة هذا برابط صورة حقيقية لمشروعك -->
+                        <img src="https://placehold.co/800x500/0d47a1/ffffff?text=المشروع+الأول" alt="مشروع مركز تجاري" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">المول التجاري الكبير</h3>
+                            <p class="text-gray-600 mb-4 text-sm">حلول أمنية شاملة تشمل 150 كاميرا IP، ونظام متكامل للتحكم بالدخول للموظفين.</p>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">CCTV & Access Control</span>
+                        </div>
+                    </div>
+
+                    <!-- المشروع 2: فندق فاخر (مثال) -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-blue-500/30 transition duration-500">
+                        <!-- يمكنك استبدال رابط الصورة هذا برابط صورة حقيقية لمشروعك -->
+                        <img src="https://placehold.co/800x500/2ecc71/ffffff?text=المشروع+الثاني" alt="مشروع فندق فاخر" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">فندق ومنتجع النخبة</h3>
+                            <p class="text-gray-600 mb-4 text-sm">تأسيس شبكة بيانات فائقة السرعة وأنظمة اتصال داخلية متطورة (IP PABX).</p>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Networking & Communication</span>
+                        </div>
+                    </div>
+
+                    <!-- المشروع 3: مجمع سكني (مثال) -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-blue-500/30 transition duration-500">
+                        <!-- يمكنك استبدال رابط الصورة هذا برابط صورة حقيقية لمشروعك -->
+                        <img src="https://placehold.co/800x500/e67e22/ffffff?text=المشروع+الثالث" alt="مشروع مجمع سكني" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">مجمع بوابة المدينة</h3>
+                            <p class="text-gray-600 mb-4 text-sm">نظام إنذار حريق Addressable متكامل، مع ربط مركزي بلوحة تحكم رئيسية.</p>
+                            <span class="inline-block bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Fire Alarm System</span>
+                        </div>
+                    </div>
+
+                    <!-- لبدء إضافة مشروع جديد، قم بنسخ كل الكود بين علامات (<!-- المشروع X: ... --> و ألصقه هنا وقم بتعديل النصوص و الصورة -->
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- قسم "اطلب عرض سعر" (Quote Request) - أقوى CTA -->
+        <section id="quote" class="py-20 bg-blue-700 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold mb-4">هل أنت جاهز لتأمين منشأتك؟</h2>
+                <p class="text-xl text-blue-200 mb-8">أخبرنا عن متطلبات مشروعك وسيقوم فريقنا بإعداد عرض سعر تنافسي ومفصل ومناسب لاحتياجاتك التقنية والأمنية.</p>
+                
+                <form id="quote-form" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800 space-y-4 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="q_name" class="block text-sm font-medium mb-1">الاسم الكامل</label>
+                            <input type="text" id="q_name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+                        </div>
+                        <div>
+                            <label for="q_email" class="block text-sm font-medium mb-1">البريد الإلكتروني</label>
+                            <input type="email" id="q_email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="q_service" class="block text-sm font-medium mb-1">الخدمة المطلوبة</label>
+                        <select id="q_service" name="service" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+                            <option value="">-- اختر الخدمة --</option>
+                            <option value="CCTV">كاميرات المراقبة (CCTV)</option>
+                            <option value="AC">التحكم بالدخول (Access Control)</option>
+                            <option value="Networking">شبكات البيانات والـ IT</option>
+                            <option value="FireAlarm">إنذار الحريق</option>
+                            <option value="Other">أخرى/حل متكامل</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="q_message" class="block text-sm font-medium mb-1">تفاصيل المشروع والمتطلبات</label>
+                        <textarea id="q_message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-[1.01] text-lg">
+                        إرسال طلب عرض سعر
+                    </button>
+                    <div id="quote-message" class="mt-4 text-center hidden p-3 rounded-lg text-sm font-medium"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- قسم عن الشركة (About) - قم بتعديل هذا القسم ليناسب شركتك -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">مهمتنا ورؤيتنا</h2>
+                <p class="text-xl text-center text-gray-600 max-w-2xl mx-auto mb-16">من نحن وما الذي يجعلنا شريكك الأمثل في مجال التيار الخفيف.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                    
+                    <!-- الرؤية -->
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                        <i data-lucide="eye" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold mb-2">رؤيتنا</h3>
+                        <p class="text-gray-600">أن نكون الشركة الرائدة والموثوقة في تقديم حلول أمنية وتقنية متطورة ومستدامة في المنطقة.</p>
+                    </div>
+
+                    <!-- المهمة -->
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                        <i data-lucide="target" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold mb-2">مهمتنا</h3>
+                        <p class="text-gray-600">حماية منشآت عملائنا وتسهيل عملياتهم اليومية عبر أنظمة ذكية وآمنة ذات كفاءة عالية.</p>
+                    </div>
+
+                    <!-- القيم -->
+                    <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md">
+                        <i data-lucide="award" class="icon w-10 h-10 mx-auto text-blue-600 mb-3"></i>
+                        <h3 class="text-2xl font-bold mb-2">قيمنا</h3>
+                        <p class="text-gray-600">النزاهة، الابتكار، والالتزام بالجودة في كل مرحلة من مراحل المشروع.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التواصل (Contact Info) - قم بتعديل أرقام الهاتف والبريد والعنوان هنا -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-green-400 mb-4">هل لديك استفسارات؟ تواصل معنا</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">فريقنا الفني جاهز للإجابة على جميع أسئلتك ومساعدتك في اختيار الحل الأمثل لمنشأتك.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- الهاتف -->
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl hover:bg-gray-700 transition duration-300">
+                        <i data-lucide="phone" class="icon w-8 h-8 mx-auto text-green-400 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">اتصل بنا</h3>
+                        <p class="text-lg text-gray-300">+966 50 XXX XXXX</p>
+                    </div>
+
+                    <!-- البريد الإلكتروني -->
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl hover:bg-gray-700 transition duration-300">
+                        <i data-lucide="mail" class="icon w-8 h-8 mx-auto text-green-400 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">البريد الإلكتروني</h3>
+                        <p class="text-lg text-gray-300">info@smartlowcurrent.com</p>
+                    </div>
+
+                    <!-- العنوان -->
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl hover:bg-gray-700 transition duration-300">
+                        <i data-lucide="map-pin" class="icon w-8 h-8 mx-auto text-green-400 mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">موقعنا</h3>
+                        <p class="text-lg text-gray-300">الرياض، المملكة العربية السعودية - حي النرجس</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="bg-gray-800 text-white p-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            
+            <div class="text-center md:text-right mb-4 md:mb-0">
+                <p class="text-sm">
+                    &copy; 2025 التيار الذكي. جميع الحقوق محفوظة.
+                </p>
+            </div>
+            
+            <div class="flex space-x-4 space-x-reverse">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i data-lucide="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript للتفاعل -->
+    <script>
+        // تهيئة أيقونات Lucide
+        lucide.createIcons();
+
+        // 1. التعامل مع قائمة الهامبرغر المتنقلة
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // 2. التعامل مع نموذج طلب عرض السعر
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('quote-message');
+            
+            // محاكاة إرسال البيانات (في تطبيق حقيقي يتم الإرسال إلى خادم)
+            messageDiv.textContent = 'تم استلام طلبك! سنتواصل معك خلال 24 ساعة.';
+            messageDiv.classList.remove('hidden');
+            messageDiv.classList.add('bg-green-500', 'text-white');
+            
+            // إعادة ضبط النموذج بعد إرساله
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+                document.getElementById('quote-form').reset();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
